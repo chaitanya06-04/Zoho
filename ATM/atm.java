@@ -10,7 +10,7 @@ class admindetails
     }
 }
 
-public class atm {
+public class atm4 {
  
     static String usernames[]={"preetham","chaitanya","shadow"};
     static String userpasswords[]={"1234","5678","8901"};
@@ -26,6 +26,7 @@ public class atm {
     static Scanner sc=new Scanner(System.in);
   public static void Admin()
     { 
+        System.out.print("\033[H\033[2J");
         System.out.println("Admin logged in successfully"); 
         
     while(true)
@@ -40,9 +41,10 @@ public class atm {
     
     if(adminchoice==1)
      {
+        System.out.print("\033[H\033[2J");
         for(int i=0;i<demo.length;i++)
         {
-            System.out.println("enter no of notes to be added of "+notesname[i]);
+            System.out.print("Enter no of notes to be added of "+notesname[i]+" : ");
             int add=sc.nextInt();
             demo[i]=demo[i]+add;
 
@@ -52,6 +54,7 @@ public class atm {
 
     else if(adminchoice==2)
     {
+        System.out.print("\033[H\033[2J");
       for(int i=0;i<demo.length;i++)
       {
           System.out.println(notesname[i]+"-->"+demo[i]);
@@ -59,6 +62,7 @@ public class atm {
     }
     else if(adminchoice==3)
     {
+        System.out.print("\033[H\033[2J");
         for(int i=0;i<demo.length;i++)
         {
             atmmoneysum=atmmoneysum+notesname[i]*demo[i];
@@ -68,6 +72,7 @@ public class atm {
     }
     else if(adminchoice==4)
     {
+        System.out.print("\033[H\033[2J");
         break;
     }
     else
@@ -84,6 +89,7 @@ public class atm {
  
     public static void user()
     {
+        System.out.print("\033[H\033[2J");
     System.out.println(usernames[currentuser]+" logged in successfully"); 
        
     while(true)
@@ -102,7 +108,8 @@ public class atm {
     int userchoice=sc.nextInt();
     if(userchoice==1)
     {
-        System.out.println("enter amount");
+        System.out.print("\033[H\033[2J");
+        System.out.print("enter amount : ");
         int enteramount=sc.nextInt();
         int temp=enteramount;
         int withdrawnotes[]={0,0,0,0};
@@ -175,23 +182,26 @@ public class atm {
     
     else if(userchoice ==2)
     {
+        System.out.print("\033[H\033[2J");
         System.out.println("Balance is : "+userbalances[currentuser]);
     }
     else if(userchoice==3)
     {
-        System.out.println("enter current pin");
+        System.out.print("\033[H\033[2J");
+        System.out.print("enter current pin : ");
          String prevpin=sc.next();
          if(prevpin.equals(userpasswords[currentuser]))
          {
-            System.out.println("enter new pin");
+            System.out.print("enter new pin : ");
             String newpin=sc.next();
             userpasswords[currentuser]=newpin;
-            System.out.println("success pin changed");
+            System.out.println("successfully pin changed");
         }
     }
     else if(userchoice==4)
     {
-        System.out.println("enter deposit amount");
+        System.out.print("\033[H\033[2J");
+        System.out.print("enter deposit amount : ");
         int depositamount=sc.nextInt();
         int temp=depositamount;
         int depositnotes[]={0,0,0,0};
@@ -246,13 +256,14 @@ public class atm {
 }
     else if(userchoice==5)
     {
-        System.out.println("enter useraccount name : ");
+        System.out.print("\033[H\033[2J");
+        System.out.print("enter useraccount name : ");
         String user=sc.next();
         for(int i=0;i<usernames.length;i++)
         {
             if(user.equals(usernames[i]))
             {
-                System.out.println("enter amount");
+                System.out.print("enter amount : ");
                 int amountenter=sc.nextInt();
                 userbalances[i]=userbalances[i]+amountenter;
                 System.out.println("transfer successfull");
@@ -265,6 +276,7 @@ public class atm {
     }
     else if(userchoice==6)
     {
+        System.out.print("\033[H\033[2J");
        for(int i=0;i<mini.size();i++)
        {
            if(mini.get(i).substring(0,1).equals(Integer.toString(currentuser)))
@@ -275,12 +287,13 @@ public class atm {
     }
     else if(userchoice==7)
     {
+        System.out.print("\033[H\033[2J");
        break;
     }
     else
     {
         System.out.println("Invalid choice");
-        break;
+        
     }
     }
 }
@@ -379,3 +392,4 @@ public class atm {
     }
 }
 }
+
