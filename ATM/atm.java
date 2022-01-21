@@ -12,7 +12,7 @@ class admindetails
 
 public class atm {
  
-    static String usernames[]={"preetham","chaitanya","shoadow"};
+    static String usernames[]={"preetham","chaitanya","shadow"};
     static String userpasswords[]={"1234","5678","8901"};
     static int userbalances[]={500000,100000,20000};
     static int userattempt[]={1,1,1,1};
