@@ -26,15 +26,20 @@ public class rail5
     static List<String> waitingstatus=new ArrayList<>();
     static int seats[][]={{0,0,0,0,0},
                         {1,1,1,1,1},
-                        {1,1,1,1,1}, {1,1,1,1,1}, {0,0,0,0,0}, {1,1,1,1,1}, {1,1,1,1,1}, {0,0,0,0,0}, {1,1,1,1,1}, {0,0,0,0,0}};
+                        {1,1,1,1,1}, {1,1,1,1,1}, {1,1,1,1,1}, {1,1,1,1,1}, {1,1,1,1,1}, {1,1,1,1,1}, {1,1,1,1,1}, {1,1,1,1,1}};
     public static void Admin()
     {
+        
+        System.out.print("\033[H\033[2J");
+        System.out.println("Welcome Admin");
         while(true)
         {
         System.out.print("1.view booking history\n2.waiting list\n3.exit\nenter choice : ");
             int adminchoice=sc.nextInt();
             if(adminchoice==1)
             {
+                
+            System.out.print("\033[H\033[2J");
             for(int i=0;i<userbookings.size();i++)
             {
                 System.out.println("---------");
@@ -48,6 +53,8 @@ public class rail5
         }
         else if(adminchoice==2)
         {
+            
+        System.out.print("\033[H\033[2J");
             for(int i=0;i<waitinglist.size();i++)
             {
             System.out.println("---------");
@@ -61,6 +68,8 @@ public class rail5
         }
         else if(adminchoice==3)
         {
+            
+            System.out.print("\033[H\033[2J");
             break;
         }
         else{
@@ -71,6 +80,9 @@ public class rail5
     }
     public static void userID()
     {
+        
+        System.out.print("\033[H\033[2J");
+        System.out.println("user login panel");
         while(true)
         {
         System.out.print("1.Existing user\n2.New user\n3.exit\nenter choice : ");
@@ -121,6 +133,8 @@ public class rail5
 
     public static void user()
     {
+        
+        System.out.print("\033[H\033[2J");
         System.out.println(usernames.get(currentuser)+" logged in successfully");
              while(true)
             {
@@ -128,6 +142,8 @@ public class rail5
                 int userchoi=sc.nextInt();
                 if(userchoi==1)
                 {
+                    
+System.out.print("\033[H\033[2J");
                     System.out.print("Train Stations ----> ");
                     for(String i:stations)
                     {
@@ -299,6 +315,8 @@ public class rail5
                     }
                 else if(userchoi==2)
                 {
+                    
+System.out.print("\033[H\033[2J");
                     System.out.println("your bookings");
                     for(int i=0;i<userbookings.size();i++)
                     {
@@ -404,6 +422,8 @@ public class rail5
                 }
                 else if(userchoi==3)
                 {
+                    
+System.out.print("\033[H\033[2J");
                     while(true)
                     {
                         System.out.print("1.check confirmed tickets\n2.waiting tickets\n3.exit\nenter choice : ");
