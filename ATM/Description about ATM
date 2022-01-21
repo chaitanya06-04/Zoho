@@ -1,0 +1,22 @@
+# ATM
+
+This is a command line interface working of an ATM machine.
+
+
+Admin username  : bank
+Admin password  : 0000
+
+operations of admin --> 1.Load (admin can load amount to the atm)      
+                        2.check (return demolitions of the notes present in atm)    
+                        3.check atm amount (total amount present in atm)
+
+users   username : preetham    password  : 1234
+        username : chaitanya   password  : 5678
+        username : shadow      password  : 8901
+        
+operations of users --->  1.withdraw (withdraw amount from user account)
+                          2.checkbalance (return user current balance)   
+                          3.pin change (user can change pin)  
+                          4.deposit(user can deposit amount into his own account)      
+                          5.transfer amount (user can transfer amount from his account to other)  
+                          6.ministatement (user can view his previous transactions)
