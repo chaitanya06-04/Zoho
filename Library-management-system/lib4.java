@@ -29,6 +29,8 @@ public class lib4
     static List<Integer> fineamount=new ArrayList<>();
     public static void Admin()
     {
+        
+System.out.print("\033[H\033[2J");
         System.out.println("\tWelcome admin");
         while(true)
         {
@@ -36,6 +38,8 @@ public class lib4
             int adminchoice=sc.nextInt();
             if(adminchoice==1)
             {
+                
+System.out.print("\033[H\033[2J");
                 for(int i=0;i<bookids.size();i++)
                 {
                     System.out.println("Book ID : "+bookids.get(i)+"\tBook name : "+booknames.get(i)+"\tBook price : "+bookprice.get(i)+"\tBook quantity : "+bookquantity.get(i));
@@ -43,6 +47,8 @@ public class lib4
             }
             else if(adminchoice==2)
             {
+                
+System.out.print("\033[H\033[2J");
                 int bookid=-1;
                 System.out.println("Enter book name : ");
                 String name=sc.next();
@@ -65,6 +71,8 @@ public class lib4
             }
            else if(adminchoice==3)
             {
+                
+System.out.print("\033[H\033[2J");
                 System.out.println("Available books");
                 for(int i=0;i<bookids.size();i++)
                 {
@@ -91,6 +99,8 @@ public class lib4
             }
            else if(adminchoice==4)
             {
+                
+System.out.print("\033[H\033[2J");
                 for(int i=0;i<bookids.size();i++)
                 {
                     System.out.println("Book ID : "+bookids.get(i)+"\tBook name : "+booknames.get(i));
@@ -121,6 +131,8 @@ public class lib4
            }
            else if(adminchoice==5)
             {
+                
+System.out.print("\033[H\033[2J");
                 for(int i=0;i<userids.size();i++)
                 {
                     System.out.println("user id : "+userids.get(i)+"\n user name : "+usernames.get(i));
@@ -128,6 +140,9 @@ public class lib4
             }
             else if(adminchoice==6)
             {
+                
+
+                System.out.print("\033[H\033[2J");
                 while(true)
                 {
                     System.out.print("1.add member\n2.delete member\n3.exit\nenter choice : ");
@@ -157,6 +172,12 @@ public class lib4
                     }
                     else if(ch==2)
                     {
+                        
+System.out.print("\033[H\033[2J");
+                        for(int i=0;i<userids.size();i++)
+                        {
+                            System.out.println("user id : "+userids.get(i)+"\n user name : "+usernames.get(i));
+                        }
                         System.out.print("enter userid to be deleted : ");
                         int enteruser=sc.nextInt();
                         for(int i=0;i<userids.size();i++)
@@ -212,6 +233,8 @@ public class lib4
         int usch=sc.nextInt();
         if(usch==1)
         {
+            
+System.out.print("\033[H\033[2J");
             System.out.println("enter userid : ");
             int usid=sc.nextInt();
             System.out.println("enter userpassword : ");
@@ -228,6 +251,8 @@ public class lib4
         }
         else if(usch==2)
         {
+            
+System.out.print("\033[H\033[2J");
             System.out.println("Get a membership by contacting administrator");
         }
         else if(usch==3)
@@ -246,6 +271,8 @@ public class lib4
             int userchoice=sc.nextInt();
             if(userchoice==1)
             {
+                
+System.out.print("\033[H\033[2J");
                 if(booktakingatatime.get(currentuser)<3)
                 {
                 System.out.println("Available books");
@@ -295,6 +322,8 @@ public class lib4
             }
             else if(userchoice==2)
             {
+                
+System.out.print("\033[H\033[2J");
                 for(int i=0;i<usercart.size();i++)
                 {
                     if(Integer.toString(userids.get(currentuser)).equals(usercart.get(i).substring(0,3)) && usercartstatus.get(i).equals("taken"))
@@ -358,6 +387,8 @@ public class lib4
             }
             else if(userchoice==3)
             {
+                
+System.out.print("\033[H\033[2J");
                 for(int i=0;i<usercart.size();i++)
                 {
                     if(Integer.toString(userids.get(currentuser)).equals(usercart.get(i).substring(0,3)))
@@ -368,6 +399,8 @@ public class lib4
             }
             else if(userchoice==4)
             {
+                
+System.out.print("\033[H\033[2J");
                 for(int i=0;i<usercart.size();i++)
                 {
                     if(Integer.toString(userids.get(currentuser)).equals(usercart.get(i).substring(0,3)) && usercartstatus.get(i).equals("taken"))
@@ -413,6 +446,8 @@ public class lib4
             }
             else if(userchoice==5)
             {
+                
+System.out.print("\033[H\033[2J");
                 break;
             }
             else{
