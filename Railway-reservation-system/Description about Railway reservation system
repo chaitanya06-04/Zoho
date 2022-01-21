@@ -1,0 +1,19 @@
+# Railway-reservation-system
+
+total seats =  10
+
+stations --> CBE , TIR , ERO , SEL , CHE
+
+Admin username : rail  password : 0000
+
+Admin operations --->  1.view booking history (displays confirmed & waiting tickets with pnr number,boarding point,destination product,seat number)
+                       2.waiting list  (displays waiting tickets with pnr number,boarding point,destination product)
+                       
+user login ---> 1.Existing user(login with credentials) 
+                2.new user(signup)
+                
+user operations --->  1.Book ticket(if seats available ticket will be confirmed otherwise waiting ticket will be booked)
+                      2.cancel ticket (cancel tickets confirmed/waiting by entering pnr number)
+                      3.view booking (list confirmed/waiting list based on user choice)
+                      
+If a ticket was cancelled by user then automatically waiting list ticket can be confirmed based on criteria.
