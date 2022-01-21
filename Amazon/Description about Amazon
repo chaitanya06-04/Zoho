@@ -1,0 +1,23 @@
+# Amazon
+
+Admin username : mysite   password : 0000
+
+admin operations ---> 1.List all merchants    
+                      2.merchants waiting list(approve/disapprove)      
+                      3.delete merchant   
+                      4.View all products(lists all merchants products)
+                      
+merchant login ---> 1.Existing merchant(login with credentials)
+                    2.new merchant(signup and wait for admin approval)
+
+merchant operations ----> 1.Add product  
+                         2.review product(list all of his products)  
+                         3.update product(update desired products)
+        
+user login ---> 1.Existing user(login with credentials)
+                2.new user(signup)
+
+user operations ---> 1.available products(lists all products && adding products to cart)     
+                     2.go to cart(buying from cart either using wallet/COD)   
+                     3.check wallet balance(check/add money)      
+                     4.order history(previous orders)
