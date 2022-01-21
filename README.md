@@ -2,7 +2,7 @@
 
 Language used : JAVA
 
-# --------------------- Welcome Visitor --------------------
+# --------------------- Welcome Evaluator --------------------
 
 This repository contains Zoho-mini-applications, I hope you will go through it and review.
 
@@ -15,4 +15,4 @@ This repository contains Zoho-mini-applications, I hope you will go through it a
 
 Note : Description about each appilcation is mentioned inside folders
 
-#--------------------Thank you-------------------------------
+# --------------------Thank you-------------------------------
