@@ -21,8 +21,9 @@ public class ama21
      static List<String> previousorders=new ArrayList<>();
      static int currentuser=-1,usercurrentid=-1;
      static int updatedcartmoney=0;
-    public static void admin()
+    public static void admin()  
     {
+        System.out.print("\033[H\033[2J");
     System.out.println("\tAdmin logged successfully");
     
     while(true)
@@ -33,6 +34,7 @@ public class ama21
     int adminchoice=sc.nextInt();
     if(adminchoice==1)
     {
+        System.out.print("\033[H\033[2J");
         for(int i=0;i<merchantstatus.size();i++)
         {
             if(merchantstatus.get(i)==1)
@@ -44,6 +46,7 @@ public class ama21
     }
     else if(adminchoice==2)
     {
+        System.out.print("\033[H\033[2J");
         for(int i=0;i<merchantstatus.size();i++)
         {
             if(merchantstatus.get(i)==-1)
@@ -73,6 +76,7 @@ public class ama21
     }
     else if(adminchoice==3)
     {
+        System.out.print("\033[H\033[2J");
         for(int i=0;i<merchantstatus.size();i++)
         {
             if(merchantstatus.get(i)==1)
@@ -109,6 +113,7 @@ public class ama21
     }
     else if(adminchoice==4)
     {
+        System.out.print("\033[H\033[2J");
        for(int i=0;i<merchantproducts.size();i++)
        {
            System.out.println("Product : "+merchantproducts.get(i)+"\nPrice : "+price.get(i)+"\nQuantity : "+quantity.get(i));
@@ -117,6 +122,7 @@ public class ama21
     }
     else if(adminchoice==5)
     {
+        System.out.print("\033[H\033[2J");
        break;
     }
     
@@ -128,6 +134,7 @@ public class ama21
     }
     public static void merchant()
     {
+        System.out.print("\033[H\033[2J");
         System.out.println("\t"+merchantnames.get(currentuser)+" logged in successfully");
         while(true)
         {
@@ -137,7 +144,8 @@ public class ama21
             int merchantchoice=sc.nextInt();
             if(merchantchoice==1)
             {
-                
+
+                System.out.print("\033[H\033[2J");
                     System.out.println("enter product name : ");
                     String product=sc.next();
                     String updateproname=merchantids.get(currentuser)+product;
@@ -156,6 +164,7 @@ public class ama21
             }
             else if(merchantchoice==2)
             {
+                System.out.print("\033[H\033[2J");
                 for(int i=0;i<merchantproducts.size();i++)
                 {
                     String pro=merchantproducts.get(i);
@@ -168,6 +177,7 @@ public class ama21
             }
             else if(merchantchoice==3)
             {
+                System.out.print("\033[H\033[2J");
                 for(int i=0;i<merchantproducts.size();i++)
                 {
                     if(merchantproducts.get(i).substring(0,3).equals(Integer.toString(merchantids.get(currentuser))))
@@ -200,6 +210,7 @@ public class ama21
             }
             else if(merchantchoice==4)
             {
+                System.out.print("\033[H\033[2J");
                 break;
             }
             else
@@ -283,9 +294,9 @@ public class ama21
         if(userchoi==1)
         {
             int use=0;
-            System.out.println("Enter username");
+            System.out.println("Enter username : ");
             String username=sc.next();
-            System.out.println("enter password");
+            System.out.println("enter password : ");
             String userpass=sc.next();
             for(int i=0;i<usernames.size();i++)
             {
@@ -303,11 +314,11 @@ public class ama21
         }
         else if(userchoi==2)
         {
-            System.out.println("Enter username");
+            System.out.println("Enter username : ");
             String newusername=sc.next();
-            System.out.println("enter password");
+            System.out.println("enter password : ");
             String newuserpass=sc.next();
-            System.out.println("confirm password");
+            System.out.println("confirm password : ");
             String newuserfinalpass=sc.next();
            
 
@@ -343,6 +354,7 @@ public class ama21
     }
     public static void user()
     {
+        System.out.print("\033[H\033[2J");
         System.out.println("\t"+usernames.get(usercurrentid)+" logged in successfully");
         while(true)
         {
@@ -350,7 +362,7 @@ public class ama21
             int userchoi=sc.nextInt();
             if(userchoi==1)
             {
-        
+                System.out.print("\033[H\033[2J");
             for(int i=0;i<merchantproducts.size();i++)
             {
 
@@ -396,6 +408,7 @@ public class ama21
         }
         else if(userchoi==2)
         {
+           
             int cartamount=0;
             for(int i=0;i<dupusercart.size();i++)    
             {
@@ -418,11 +431,13 @@ public class ama21
             
             while(true)
             { 
-            System.out.print("to buy items in cart\n1.to check out using wallet\n2.go for COD\n3.exit\nenter choice : ");
+               
+            System.out.print("To buy items in cart\n1.to check out using wallet\n2.go for COD\n3.exit\nenter choice : ");
             int buyuser=sc.nextInt();
             int c;
             if(buyuser==1)
             {
+               
                 c=0;
                 if(cartamount<=userwalletmoney.get(usercurrentid))
                 {
@@ -462,6 +477,7 @@ public class ama21
             }
             else if(buyuser==2)
             {
+               
                 for(int i=0;i<usercart.size();i++)
                     {
                        
@@ -502,13 +518,14 @@ public class ama21
     
         else if(userchoi==3)
         {
-           
+            System.out.print("\033[H\033[2J");
             while(true)
             {
                 System.out.print("1.add money to wallet\n2.check balance\n3.exit\nenter choice : ");
                int wall=sc.nextInt();
                if(wall==1)
                {
+                System.out.print("\033[H\033[2J");
                    System.out.print("enter amount : ");
                    int add=sc.nextInt();
                    int up=userwalletmoney.get(usercurrentid)+add;
@@ -517,16 +534,19 @@ public class ama21
                }
                else if(wall==2)
                {
+                System.out.print("\033[H\033[2J");
                 System.out.println(userwalletmoney.get(usercurrentid));
                }
                else if(wall==3)
                {
+                System.out.print("\033[H\033[2J");
                    break;
                }
             }
         }
         else if(userchoi==4)
         {
+            System.out.print("\033[H\033[2J");
            for(int i=0;i<previousorders.size();i++)
            {
                 System.out.println("product name : " +previousorders.get(i).substring(6));
@@ -534,6 +554,7 @@ public class ama21
         } 
         else if(userchoi==5)
         {
+            System.out.print("\033[H\033[2J");
             break;
         }
         else{
@@ -592,3 +613,4 @@ public class ama21
     
 }
 }
+
