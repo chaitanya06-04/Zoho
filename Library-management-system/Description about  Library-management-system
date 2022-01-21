@@ -1,0 +1,18 @@
+# Library-management-system
+
+Admin username  : admin  password : 0000
+
+Admin operations  -->   1.Available books(lists all available books in library)
+                        2.Add Book (adding book to the library)
+                        3.Update Book (updating book details)
+                        4.Delete book (deleting book)
+                        5.members list (lists all users)
+                        6.add member/delete member (adding/deleting user)
+
+user login ---> 1.Existing user(login with credentials) 
+                2.new user (returns contact admin for creating account)
+                
+user operations --->  1.Borrow book (lists available books in library and user can borrow it)
+                      2.return book (lists book taken by user and user can return it. If fine is there it will be charged from his account )
+                      3.cart (gives the previous history of the books taken/returned by the user)
+                      4.lost book (half of the amount of the lost book price was charged from user account)
