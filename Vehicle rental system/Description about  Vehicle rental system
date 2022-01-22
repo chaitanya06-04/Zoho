@@ -1,0 +1,18 @@
+# Vehicle rental system
+
+Admin username : admin   password : 0000
+
+admin operations ---> 1.Add vehicle
+                      2.Delete vehicle
+                      3.vehicles list(returns all vehicles with details)
+                      4.borrow list (current all rented vehicles)
+                      5.modify vehicle
+                      6.Available vehicles (lists not rented vehicles)
+                      7.users list (displays all users details)
+                      
+user login ---> 1.Existing user(login with credentials)
+                2.new user(signup)
+
+user operations --->  1.Borrow vehicles (shows available vehicles for rent)
+                      2.Previous rentals (displays currentuser previous rented vehicles with car details,borrow,return date and rent amount)
+                      3.return vehicle (shows current rented vehicles)
