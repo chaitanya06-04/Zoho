@@ -7,7 +7,7 @@ Language used : JAVA
 This repository contains Zoho-mini-applications, I hope you will go through it and review.
 
 1. ATM Application
-2. Train_booking Application
+2. Railway reservation system
 3. Amazon Application
 4. Library Management System
 5. Vehicle Rental System
