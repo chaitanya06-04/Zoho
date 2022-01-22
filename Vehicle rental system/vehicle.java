@@ -26,7 +26,7 @@ public class vehicle {
     static List<Long> cartamount=new ArrayList<>();
     static List<String> borrowdate=new ArrayList<>();
     static List<String> returndate=new ArrayList<>();
-    
+    static List<Integer> rentcart=new ArrayList<>();
     static int currentuser=-1;
     static SimpleDateFormat sdf= new SimpleDateFormat("dd-MM-yyyy HH:mm:ss");
     public static void Admin()
@@ -35,7 +35,7 @@ public class vehicle {
         System.out.println("\tWelcome admin");
         while(true)
         {
-            System.out.print("1.Add vehicle\n2.Delete vehicle\n3.vehicles list\n4.borrow list\n5.modify vehicle\n6.Available vehicles\n7.exit\nEnter choice : ");
+            System.out.print("1.Add vehicle\n2.Delete vehicle\n3.vehicles list\n4.borrow list\n5.modify vehicle\n6.Available vehicles\n7.users list\n8.exit\nEnter choice : ");
             int adminchoice=sc.nextInt();
             if(adminchoice==1)
             {
@@ -101,6 +101,13 @@ public class vehicle {
             else if(adminchoice==4)
             {
                 System.out.print("\033[H\033[2J");
+                for(int i=0;i<usercart.size();i++)
+                {
+                    
+                    System.out.println("user id : "+usercart.get(i).substring(0, 3)+"\nvehicle id : "+usercart.get(i).substring(3)+"\nvehicle name : "+cartvehiclename.get(i)+"\nvehicle type : "+cartvehiceltype.get(i)+"\nBorrowdate : "+borrowdate.get(i)+"\nreturn date : "+returndate.get(i)+"\nrent amount : "+cartamount.get(i));
+                }
+                System.out.println("------");
+
             }
             else if(adminchoice==5)
             {
@@ -133,6 +140,7 @@ public class vehicle {
             }
             else if(adminchoice==6)
             {
+                System.out.print("\033[H\033[2J");
                 for(int i=0;i<vehiclestatus.size();i++)
                 {
                     if(vehiclestatus.get(i).equals("free"))
@@ -143,6 +151,14 @@ public class vehicle {
             }
             else if(adminchoice==7)
             {
+                System.out.print("\033[H\033[2J");
+                for(int i=0;i<userids.size();i++)
+                {
+                    System.out.println("user id : "+userids.get(i)+"\tusername : "+usernames.get(i));
+                }
+            }
+            else if(adminchoice==8)
+            {
                 break;
             }
         }
@@ -150,9 +166,10 @@ public class vehicle {
     public static void userID()
     {
         System.out.print("\033[H\033[2J");
-        System.out.println("\tuser login panel");
+      
         while(true)
         {
+            System.out.println("\tuser login panel");
         System.out.print("1.Existing user\n2.New user\n3.exit\nenter choice : ");
         int userchoice=sc.nextInt();
         if(userchoice==1)
@@ -208,6 +225,7 @@ public class vehicle {
             int usch=sc.nextInt();
             if(usch==1)
             {
+                System.out.print("\033[H\033[2J");
                 System.out.println("Availble vehicles");
                 for(int i=0;i<vehiclestatus.size();i++)
                 {
@@ -226,13 +244,14 @@ public class vehicle {
                         String val=Integer.toString(userids.get(currentuser))+Integer.toString(useen);
                         usercart.add(val);cartvehiceltype.add(vehicletype.get(i));cartvehiclestatus.add("rented");cartamount.add((long)0);vehiclestatus.set(i, "rented");
                        Date date=new Date(); String bd=sdf.format(date); borrowdate.add(bd); returndate.add("not returned");cartvehiclename.add(vehiclename.get(i));
-                        System.out.println("vehicle rented successfully");
+                        System.out.println("vehicle rented successfully");rentcart.add(vehiclerent.get(i));
                     }
                    
                 }
             }
             else if(usch==2)
             {
+                System.out.print("\033[H\033[2J");
                 for(int i=0;i<cartvehiclestatus.size();i++)
                 {
                     if(usercart.get(i).substring(0,3).equals(Integer.toString(userids.get(currentuser))) && cartvehiclestatus.get(i).equals("returned"))
@@ -245,6 +264,7 @@ public class vehicle {
             }
             else if(usch==3)
             {
+                System.out.print("\033[H\033[2J");
                 for(int i=0;i<usercart.size();i++)
                 {
                     if(usercart.get(i).substring(0,3).equals(Integer.toString(userids.get(currentuser))) && cartvehiclestatus.get(i).equals("rented"))
@@ -264,7 +284,7 @@ public class vehicle {
                         Date date1=new Date();
                         String rd=sdf.format(date1);
                         returndate.set(i,rd);
-                        long amount=rentamount(borrowdate.get(i), returndate.get(i));
+                        long amount=rentamount(borrowdate.get(i), returndate.get(i))*(long)rentcart.get(i);
                         cartvehiclestatus.set(i, "returned");
                         cartamount.set(i, amount);
                         System.out.println("vehicle returned and amount should be paid is "+amount);
@@ -277,6 +297,7 @@ public class vehicle {
                     {
                         if(Integer.parseInt(retid)==vehicleids.get(i))
                         {
+                            
                             vehiclestatus.set(i, "free");
                         }
                     }
@@ -284,6 +305,7 @@ public class vehicle {
             }
             else if(usch==4)
             {
+                System.out.print("\033[H\033[2J");
                 break;
             }
             else
@@ -300,6 +322,8 @@ public class vehicle {
         int ch=sc.nextInt();
         if(ch==1)
         {
+            System.out.print("\033[H\033[2J");
+            System.out.print("\tAdmin login panel");
         System.out.print("Enter admin username : ");
         String adminname=sc.next();
         System.out.print("Enter admin password : ");
@@ -336,6 +360,8 @@ public static long rentamount(String bd,String rd)
     Date d2 = sdf.parse(rd);
     long difference_In_Time= d2.getTime() - d1.getTime();
     long difference_In_Hour= TimeUnit.MILLISECONDS.toHours(difference_In_Time)% 24;
+    //long difference_In_Seconds= TimeUnit.MILLISECONDS .toSeconds(difference_In_Time)% 60;
+
     amount=difference_In_Hour;
     }
     catch (ParseException e) 
