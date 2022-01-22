@@ -32,9 +32,9 @@ public class vehicle {
     public static void Admin()
     {
         System.out.print("\033[H\033[2J");
-        System.out.println("\tWelcome admin");
         while(true)
         {
+            System.out.println("\tWelcome admin");
             System.out.print("1.Add vehicle\n2.Delete vehicle\n3.vehicles list\n4.borrow list\n5.modify vehicle\n6.Available vehicles\n7.users list\n8.exit\nEnter choice : ");
             int adminchoice=sc.nextInt();
             if(adminchoice==1)
@@ -323,8 +323,8 @@ public class vehicle {
         if(ch==1)
         {
             System.out.print("\033[H\033[2J");
-            System.out.print("\tAdmin login panel");
-        System.out.print("Enter admin username : ");
+            System.out.print("\tAdmin login panel\n");
+            System.out.print("Enter admin username : ");
         String adminname=sc.next();
         System.out.print("Enter admin password : ");
         String adminpass=sc.next();
