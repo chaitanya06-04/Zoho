@@ -1,1 +1,12 @@
+# Splitwise Application
 
+Users  --->     username : chaitanya   password : 1234
+                username : preetham    password : 1122
+                username : kaushik     password : 2233
+                username : nithya      password : 3344
+
+user operations ---> 1.Debts to be paid (returns details about user borrowings)
+                     2.Amount to be collected (returns amount to be collected from others)
+                     3.History of transactions (previous transactions)
+                     4.Wallet (return wallet amount)
+                     5.Add amount to wallet
